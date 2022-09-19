@@ -3,17 +3,17 @@
 class Publication{
   store: Store;
   is_active: boolean; /** Analizar si conviene meterlo como un Enum */
-  product: Product;
+  product: api.models.Product;
 }
 
-class Product {
+class api.models.Product {
   name: String;
   price: number;
   description: String;
   fabricationTime: TimeRanges;
 
   personalizations: Personalization[];
-  children: Product[];
+  children: api.models.Product[];
   
 }
 
@@ -29,7 +29,7 @@ class Seller {
   
   availablePaymentMethods: PaymentMethod[]
 
-  customizeProduct(product:Product, personalization[]:Personalization){}
+  customizeProduct(product:api.models.Product, personalization[]:Personalization){}
   addPaymentMethod(){}
   emmitInvoice(){}
 
@@ -45,7 +45,7 @@ class Store{
 }
 
 class Item{
-  product: Product;
+  product: api.models.Product;
   quantity: Number;
 }
 
