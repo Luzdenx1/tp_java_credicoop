@@ -1,4 +1,4 @@
-package com.example.tp_java;
+package api.example.tp_java;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
