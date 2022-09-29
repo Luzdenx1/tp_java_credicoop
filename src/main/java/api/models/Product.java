@@ -1,44 +1,31 @@
 package api.models;
 
+import lombok.Getter;
+import lombok.Setter;
+
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
+@Entity
+@Table(name="product")
+@Setter
+@Getter
 public class Product {
+    @Id
+    @GeneratedValue
+    private Integer id;
+    @Column(name="name")
     private String name;
+    @Column(name="price")
     private Integer price;
+    @Column(name="description")
     private String description;
+    @Column(name="fabricationTime")
     private String fabricationTime;
+    @OneToMany
+    private List<Customization> customizations;
 
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public Integer getPrice() {
-        return price;
-    }
-
-    public void setPrice(Integer price) {
-        this.price = price;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public String getFabricationTime() {
-        return fabricationTime;
-    }
-
-    public void setFabricationTime(String fabricationTime) {
-        this.fabricationTime = fabricationTime;
-    }
-    public void getProducts(){
-
+    public Product(){
+        this.customizations = new ArrayList<>();
     }
 }

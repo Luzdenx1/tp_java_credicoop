@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class ProductController {
     @GetMapping(path={"/",""})
     public String getProducts(){
-        return "NameProduct";
+        return "Pruebita";
     }
 
 }
